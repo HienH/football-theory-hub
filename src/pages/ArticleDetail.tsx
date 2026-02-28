@@ -19,8 +19,13 @@ const ArticleDetail = () => {
   if (!article) {
     return (
       <div className="container py-24 text-center">
-        <h1 className="font-serif text-3xl font-bold text-foreground">Article not found</h1>
-        <Link to="/articles" className="mt-4 inline-flex items-center gap-1 text-sm text-gold hover:underline">
+        <h1 className="font-serif text-3xl font-bold text-foreground">
+          Article not found
+        </h1>
+        <Link
+          to="/articles"
+          className="mt-4 inline-flex items-center gap-1 text-sm text-gold hover:underline"
+        >
           <ArrowLeft size={14} /> Back to articles
         </Link>
       </div>
@@ -38,20 +43,40 @@ const ArticleDetail = () => {
   const handleShareTwitter = () => {
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(article.title);
-    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+    window.open(
+      `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+      "_blank",
+    );
   };
 
   return (
     <article className="container py-12">
-      <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-gold transition-colors mb-8">
-        <ArrowLeft size={14} /> All articles
-      </Link>
+      <div className="mb-8">
+        <Link
+          to="/articles"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-gold transition-colors"
+        >
+          <ArrowLeft size={14} /> All articles
+        </Link>
+      </div>
+
+      {/* Banner Image */}
+      <div className="mb-8 overflow-hidden rounded-xl">
+        <img
+          src="/article-banner.jpg"
+          alt="Football on pitch"
+          className="h-64 md:h-80 lg:h-96 w-full object-cover"
+        />
+      </div>
 
       {/* Header */}
       <header className="max-w-3xl">
         <div className="flex flex-wrap gap-2 mb-4">
           {article.tags.map((tag) => (
-            <span key={tag} className="rounded-full bg-gold-light border border-gold/20 px-3 py-0.5 text-xs font-medium text-gold">
+            <span
+              key={tag}
+              className="rounded-full bg-gold-light border border-gold/20 px-3 py-0.5 text-xs font-medium text-gold"
+            >
               {tag}
             </span>
           ))}
@@ -73,10 +98,12 @@ const ArticleDetail = () => {
       </header>
 
       {/* Body + TOC */}
-      <div className="mt-10 flex gap-12">
+      <div className="mt-8 flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-12">
         <div className="min-w-0 max-w-3xl flex-1">
           {/* Mobile TOC */}
-          <TableOfContents content={article.content} />
+          <div className="lg:hidden">
+            <TableOfContents content={article.content} />
+          </div>
           <ArticleRenderer content={article.content} />
 
           {/* Share */}
@@ -101,13 +128,17 @@ const ArticleDetail = () => {
         </div>
 
         {/* Desktop TOC */}
-        <TableOfContents content={article.content} />
+        <div className="hidden lg:block">
+          <TableOfContents content={article.content} />
+        </div>
       </div>
 
       {/* Related */}
       {related.length > 0 && (
         <section className="mt-16 border-t border-border pt-12">
-          <h2 className="font-serif text-2xl font-bold text-foreground">Related Articles</h2>
+          <h2 className="font-serif text-2xl font-bold text-foreground">
+            Related Articles
+          </h2>
           <div className="mt-2 h-1 w-8 rounded-full bg-gold" />
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((a) => (

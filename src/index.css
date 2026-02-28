@@ -55,24 +55,24 @@
   }
 
   .dark {
-    --background: 220 42% 8%;
+    --background: 235 81% 16%;
     --foreground: 220 15% 95%;
-    --card: 220 35% 12%;
+    --card: 235 65% 20%;
     --card-foreground: 220 15% 95%;
-    --popover: 220 42% 8%;
+    --popover: 235 81% 16%;
     --popover-foreground: 220 15% 95%;
     --primary: 220 15% 95%;
-    --primary-foreground: 220 42% 12%;
-    --secondary: 220 25% 18%;
+    --primary-foreground: 235 81% 16%;
+    --secondary: 235 55% 24%;
     --secondary-foreground: 220 15% 95%;
-    --muted: 220 25% 18%;
-    --muted-foreground: 220 12% 60%;
+    --muted: 235 55% 24%;
+    --muted-foreground: 230 20% 65%;
     --accent: 43 92% 52%;
-    --accent-foreground: 220 42% 12%;
+    --accent-foreground: 235 81% 16%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 25% 20%;
-    --input: 220 25% 20%;
+    --border: 235 45% 28%;
+    --input: 235 45% 28%;
     --ring: 43 92% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -82,12 +82,20 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --gold-light: 43 50% 20%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html, body, #root {
+    height: auto;
+    overflow: visible;
   }
 
   body {
@@ -121,9 +129,15 @@
   }
 
   .pitch-texture {
-    background-image: 
+    background-image:
       linear-gradient(90deg, hsl(220 15% 90% / 0.3) 1px, transparent 1px),
       linear-gradient(hsl(220 15% 90% / 0.3) 1px, transparent 1px);
     background-size: 40px 40px;
+  }
+
+  .dark .pitch-texture {
+    background-image:
+      linear-gradient(90deg, hsl(235 45% 28% / 0.4) 1px, transparent 1px),
+      linear-gradient(hsl(235 45% 28% / 0.4) 1px, transparent 1px);
   }
 }

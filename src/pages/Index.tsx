@@ -63,7 +63,7 @@ const Index = () => {
       )}
       {/* Stadium Parallax */}
       <section
-        className="relative h-64 md:h-90 lg:h-96 bg-fixed bg-center bg-cover"
+        className="relative h-64 md:h-90 lg:h-96 md:bg-fixed bg-center bg-cover"
         style={{ backgroundImage: "url('/stadium.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/40" />

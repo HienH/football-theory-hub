@@ -15,30 +15,40 @@ const Articles = () => {
       {article && (
         <Link
           to={`/articles/${article.slug}`}
-          className="group mt-10 block rounded-xl border border-border bg-secondary/30 p-6 md:p-10 transition-all hover:border-gold/40 hover:shadow-lg"
+          className="group mt-10 flex flex-col md:flex-row rounded-xl border border-border bg-secondary/30 overflow-hidden transition-all hover:border-gold/40 hover:shadow-lg"
         >
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground group-hover:text-gold transition-colors leading-snug">
-            {article.title}
-          </h2>
-
-          <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-            {article.excerpt}
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              {format(new Date(article.date), "d MMM yyyy")}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock size={14} />
-              {article.readingTime} read
-            </span>
+          <div className="md:w-64 lg:w-80 shrink-0">
+            <img
+              src="/article-banner.avif"
+              alt={article.title}
+              className="h-48 md:h-full w-full object-cover"
+            />
           </div>
 
-          <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold group-hover:gap-3 transition-all">
-            Read article <ArrowRight size={16} />
-          </span>
+          <div className="p-6 md:p-10 flex flex-col justify-center">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground group-hover:text-gold transition-colors leading-snug">
+              {article.title}
+            </h2>
+
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
+              {article.excerpt}
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                {format(new Date(article.date), "d MMM yyyy")}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {article.readingTime} read
+              </span>
+            </div>
+
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold group-hover:gap-3 transition-all">
+              Read article <ArrowRight size={16} />
+            </span>
+          </div>
         </Link>
       )}
     </div>

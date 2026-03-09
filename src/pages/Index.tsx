@@ -25,16 +25,15 @@ const Index = () => {
         className="relative -mt-16 flex min-h-screen items-center border-b border-border bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/hero-stadium.avif')" }}
       >
-        <div className="absolute inset-0 bg-black/30 dark:bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container relative z-10 py-24 md:py-32">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Football theory, <br className="hidden md:block" />
-              <span className="text-gold">explained simply.</span>
+              Football <span className="text-gold">Theorist</span>
             </h1>
             <p className="mt-6 text-lg text-gray-300 leading-relaxed">
-              Tactics, patterns, and ideas from the beautiful game — broken down
-              for coaches, players, and fans who want to see more.
+              My thoughts, ideas and observations on the beautiful game — broken
+              down for fans who want to understand football beyond the surface.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               {featured && (

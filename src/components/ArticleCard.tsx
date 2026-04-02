@@ -18,7 +18,7 @@ const ArticleCard = ({ article, featured = false }: ArticleCardProps) => {
     >
       <div className="md:w-56 lg:w-72 shrink-0">
         <img
-          src="/article-banner.avif"
+          src={article.banner}
           alt={article.title}
           className="h-44 md:h-full w-full object-cover"
         />

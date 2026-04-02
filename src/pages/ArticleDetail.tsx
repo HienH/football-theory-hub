@@ -63,9 +63,9 @@ const ArticleDetail = () => {
       {/* Banner Image */}
       <div className="mb-8 overflow-hidden rounded-xl">
         <img
-          src="/article-banner.avif"
-          alt="Football on pitch"
-          className="h-64 md:h-80 lg:h-96 w-full object-cover"
+          src={article.banner || "/article-banner.avif"}
+          alt={article.title}
+          className="h-64 md:h-80 lg:h-96 w-full object-cover object-top"
         />
       </div>
 

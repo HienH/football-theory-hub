@@ -23,7 +23,7 @@ const Index = () => {
       {/* Hero */}
       <section
         className="relative -mt-16 flex min-h-screen items-center border-b border-border bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-stadium.avif')" }}
+        style={{ backgroundImage: "url('/hero-stadium.webp')" }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="container relative z-10 py-24 md:py-32">
@@ -63,7 +63,7 @@ const Index = () => {
       {/* Stadium Parallax */}
       <section
         className="relative h-64 md:h-90 lg:h-96 md:bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url('/stadium.jpg')" }}
+        style={{ backgroundImage: "url('/stadium.webp')" }}
       >
         <div className="absolute inset-0 bg-black/40" />
       </section>
